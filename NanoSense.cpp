@@ -12,19 +12,14 @@
 
 NanoSense::NanoSense()
 {
-	forceFlag = true,
-	fFunction = 0;		// select force function
-	fNow = 0;			// force from z function mapping
+	zFlag = true;
+	zFunction = 0;		// select z to force function
+	fNow = 0;			// current force from z function mapping
 	button0 = false;
 	button1 = false;
 	diffPosition.set(0.0, 0.0, 0.0);
 	desiredPosition.set(0.0, 0.0, 0.1);
 
-						// create a thread which starts the main haptics rendering loop
-/*
-	hapticsThread = new cThread();
-	hapticsThread->start((a_function)&updateHaptics, CTHREAD_PRIORITY_HAPTICS);
-*/
 	// create a haptic device handler
 	handler = new cHapticDeviceHandler();
 
@@ -50,19 +45,19 @@ NanoSense::~NanoSense()
 	delete handler;
 }
 
-void NanoSense::forceOn()
+void NanoSense::zOn()
 {
-	forceFlag = true;
+	zFlag = true;
 }
 
-void NanoSense::forceOff()
+void NanoSense::zOff()
 {
-	forceFlag = false;
+	zFlag = false;
 }
 
-void NanoSense::forceToggle()
+void NanoSense::zToggle()
 {
-	forceFlag = !forceFlag;
+	zFlag = !zFlag;
 }
 
 /*------------------------------------
@@ -98,17 +93,17 @@ double NanoSense::zModelAFM(double z)
 void NanoSense::setForceFunction(int f)
 {
 	if (f > 2) f = 0;
-	fFunction = f;
+	zFunction = f;
 }
 
 void NanoSense::changeForceFunction()
 {
-	setForceFunction(++fFunction);
+	setForceFunction(++zFunction);
 }
 
 double NanoSense::forceFunction(double z)
 {
-	switch (fFunction)
+	switch (zFunction)
 	{
 		case 0:	fNow = zLinear(z); break;
 		case 1:	fNow = zExp(z); break;
@@ -151,7 +146,7 @@ void NanoSense::update(void)
 	diffPosition = desiredPosition - position;
 	forceFunction(diffPosition.z()); // map the z position through a Force Function
 
-	if (forceFlag)
+	if (zFlag)
 	{
 		double antiG = 0.65; // anti gravity on stylus
 		double zForce = getForceNow();

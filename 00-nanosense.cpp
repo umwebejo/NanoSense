@@ -452,13 +452,13 @@ void keyCallback(GLFWwindow* a_window, int a_key, int a_scancode, int a_action, 
     // option - enable/disable force field
     else if (a_key == GLFW_KEY_1)
     {
-		nanoSense->forceToggle();
-		cout << "> Toggle Force On/OFF         \r";
+		nanoSense->zToggle();
+		cout << "> Toggle Z to Force On/OFF         \r";
     }
 	else if (a_key == GLFW_KEY_2)
 	{
 		nanoSense->nanoSound.audioToggle();
-		cout << "> Toggle Audio On/OFF         \r";
+		cout << "> Toggle Force to Audio On/OFF         \r";
 	}
     // option - toggle fullscreen
     else if (a_key == GLFW_KEY_F)

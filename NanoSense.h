@@ -23,9 +23,9 @@ public:
 	NanoSound nanoSound;
 	NanoTouch nanoTouch;
 
-	void forceOn();
-	void forceOff();
-	void forceToggle();
+	void zOn();
+	void zOff();
+	void zToggle();
 
 	cHapticDeviceInfo info;	// haptic device info
 	bool button0, button1; // buttons
@@ -39,9 +39,9 @@ public:
 	void update(void);	// the main haptics audio loop
 
 private:
-	bool forceFlag;
+	bool zFlag;
 	double fNow;	// force from z function
-	int fFunction;	// select force function
+	int zFunction;	// select force function
 
 	// various z functions
 	double zLinear(double z); // linear
