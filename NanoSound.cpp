@@ -100,6 +100,9 @@ int NanoSound::audioSetup()
 {
 	audioDeviceP = new cAudioDevice();
 	audioBufferP = new cAudioBuffer();
+
+	bool fileload = audioBufferP->loadFromFile(RESOURCE_PATH("drill.wav"));
+/*
 	bool fileload = audioBufferP->loadFromFile(RESOURCE_PATH("../resources/sounds/drill.wav"));
 
 	if (!fileload)
@@ -108,6 +111,7 @@ int NanoSound::audioSetup()
 		fileload = audioBufferP->loadFromFile("../../../bin/resources/sounds/drill.wav");
 #endif
 	}
+*/
 	if (!fileload)
 	{
 		cout << "Error - Sound file failed to load or initialize correctly." << endl;

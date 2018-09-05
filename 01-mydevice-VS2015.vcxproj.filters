@@ -24,8 +24,15 @@
     <ClInclude Include="NanoSense.h" />
     <ClInclude Include="NanoSound.h" />
     <ClInclude Include="NanoTouch.h" />
+    <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="drill.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="00-nanosense-01.rc" />
   </ItemGroup>
 </Project>
