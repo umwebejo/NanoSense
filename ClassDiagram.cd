@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="NanoSense">
+    <Position X="1.75" Y="0.5" Width="2.25" />
+    <Members>
+      <Field Name="desiredPosition" Hidden="true" />
+      <Field Name="diffPosition" Hidden="true" />
+      <Field Name="fFunction" Hidden="true" />
+      <Field Name="fNow" Hidden="true" />
+      <Field Name="forceFlag" Hidden="true" />
+      <Field Name="handler" Hidden="true" />
+      <Field Name="hapticDevice" Hidden="true" />
+      <Field Name="position" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AEgBAAyAADAAgEoAIAAgIAACAIKMQAAAQAAAAAIEAAI=</HashCode>
+      <FileName>NanoSense.h</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="nanoSound" />
+      <Field Name="nanoTouch" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="NanoSound">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAQAgBAAAAAAQAAAAAigAAAAAIAEAgAICSAAABFAAA=</HashCode>
+      <FileName>NanoSound.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NanoTouch" Collapsed="true">
+    <Position X="6.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAJAAAAAQgIAAAAEEAAAAAAAAAAAAgAIQAAAgAAAAA=</HashCode>
+      <FileName>NanoTouch.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
